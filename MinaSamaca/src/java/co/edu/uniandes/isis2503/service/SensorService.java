@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 
+package co.edu.uniandes.isis2503.service;
+
 import com.sun.istack.logging.Logger;
 import java.util.List;
 import java.util.logging.Level;
@@ -35,9 +37,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/**
- *
- * 
+
  
 @Path("/sensors")
 @Produces(MediaType.APPLICATION_JSON)
@@ -51,7 +51,9 @@ public class SensorService {
         this.realtimedataLogic = new RealTimeDataLogic();
         this.measurementLogic = new MeasurementLogic();
     }
-
+/**
+ *
+ * 
     @POST
     public SensorDTO add(SensorDTO dto) {
         return sensorLogic.add(dto);
