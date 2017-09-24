@@ -1,0 +1,11 @@
+co\edu\uniandes\isis2503\nosqljpa\persistence\MeasurementPersistence.class
+co\edu\uniandes\isis2503\nosqljpa\interfaces\IMeasurementConverter.class
+co\edu\uniandes\isis2503\nosqljpa\main\Main.class
+co\edu\uniandes\isis2503\nosqljpa\model\dto\model\MeasurementDTO.class
+co\edu\uniandes\isis2503\nosqljpa\model\dto\converter\MeasurementConverter.class
+co\edu\uniandes\isis2503\nosqljpa\persistence\JPAConnection.class
+co\edu\uniandes\isis2503\nosqljpa\interfaces\IMeasurementLogic.class
+co\edu\uniandes\isis2503\nosqljpa\persistence\Persistencer.class
+co\edu\uniandes\isis2503\nosqljpa\service\MeasurementService.class
+co\edu\uniandes\isis2503\nosqljpa\model\entity\MeasurementEntity.class
+co\edu\uniandes\isis2503\nosqljpa\logic\MeasurementLogic.class

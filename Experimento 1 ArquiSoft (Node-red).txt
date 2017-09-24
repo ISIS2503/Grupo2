@@ -1,1 +1,191 @@
-[{"id":"c08e758e.83f248","type":"tab","label":"Telemetry Flow","disabled":false,"info":""},{"id":"ade6ce0.a6dac3","type":"tab","label":"Processing Flow","disabled":false,"info":""},{"id":"7bbd0d2b.54f414","type":"tab","label":"Interfaz Web","disabled":false,"info":""},{"id":"b08e5054.1c749","type":"serial-port","z":"","serialport":"COM4","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":true},{"id":"268f4cfb.7985c4","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"1947aecd.2369e1","type":"ui_base","name":"Node-RED Dashboard","theme":"theme-light"},{"id":"72f34d09.9cb184","type":"mongodb","z":"","hostname":"127.0.0.1","port":"27017","db":"rediot","name":""},{"id":"185c17b.2f5f2e8","type":"ui_group","z":"","name":"Estado del Depósito (Home)","tab":"785ca225.99953c","disp":true,"width":"6"},{"id":"6af18a5b.dbd494","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}}}},{"id":"785ca225.99953c","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"8f99b50a.563378","type":"serial-port","z":"","serialport":"COM4","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":true},{"id":"7b5c9bb0.d65d64","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"c6c8da3b.d9fdc8","type":"ui_base","name":"Node-RED Dashboard","theme":"theme-light"},{"id":"e1a8f7e.192bd08","type":"mongodb","z":"","hostname":"127.0.0.1","port":"27017","db":"rediot","name":""},{"id":"b75aeb55.3b2058","type":"ui_group","z":"","name":"Estado del Depósito (Home)","tab":"c07a48cd.1e9748","disp":true,"width":"6"},{"id":"de9fb368.7ac2d","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}}}},{"id":"c07a48cd.1e9748","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"1ecea07a.041a","type":"serial-port","z":"","serialport":"COM4","serialbaud":"9600","databits":"8","parity":"none","stopbits":"1","newline":"\\n","bin":"false","out":"char","addchar":true},{"id":"3fe4c4f8.4e43bc","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"2807f3e4.d5bd2c","type":"ui_base","name":"Node-RED Dashboard","theme":"theme-light"},{"id":"16c942e.6dea1bd","type":"mongodb","z":"","hostname":"127.0.0.1","port":"27017","db":"rediot","name":""},{"id":"3252c94d.398546","type":"ui_group","z":"","name":"Estado del Depósito (Home)","tab":"899d9027.04f15","disp":true,"width":"6"},{"id":"cd17330d.51da1","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}}}},{"id":"899d9027.04f15","type":"ui_tab","z":"","name":"Home","icon":"dashboard"},{"id":"a7a49850.ee8af8","type":"inject","z":"c08e758e.83f248","name":"Sensor Time","topic":"roomTime","payload":"","payloadType":"date","repeat":"1","crontab":"","once":true,"x":132.5,"y":383,"wires":[["77d9ae8.0249a5","d517d98.d90d828"]]},{"id":"88060cce.5c0ce","type":"function","z":"c08e758e.83f248","name":"Format Temperature","func":"var res = {};\nvar tempArray = [];\nvar tempUnit =\"\";\nvar tempUnit1 =\"\";\nvar tempUnit2 =\"\";\nvar tempUnit3 =\"\";\n\n\ntempString = msg.payload;\ntempArray = tempString.split(\"\\t\");\ntempUnit = tempArray[1].replace(\"\\r\\n\", \"\");\ntempUnit1 = tempArray[3].replace(\"\\r\\n\", \"\");\ntempUnit2 = tempArray[5].replace(\"\\r\\n\", \"\");\ntempUnit3 = tempArray[7].replace(\"\\r\\n\", \"\");\nres.topic = \"roomTemperature\";\nres.payload = {};\n\nres.payload = { \"Monóxido de carbono\": parseInt(tempArray[0]), \"Unidad Mónoxido\": tempUnit, \"Temperatura\": parseInt(tempArray[2]), \"Unidad Temperatura\": tempUnit1, \"Iluminación\": parseInt(tempArray[4]), \"Unidad Iluminación\": tempUnit2, \"Ruido\": parseInt(tempArray[6]), \"Unidad Ruido\": tempUnit3}\nreturn res;","outputs":1,"noerr":0,"x":465.5,"y":217,"wires":[["c2fa4de.bbd43b","80f98cae.ea17d"]]},{"id":"d517d98.d90d828","type":"function","z":"c08e758e.83f248","name":"Format Time","func":"var res = {};\n\nres.payload = new Date(msg.payload);\nres.topic = msg.topic;\n\nreturn res;","outputs":1,"noerr":0,"x":474.5,"y":383,"wires":[["3544f3b5.e3f7bc","80f98cae.ea17d"]]},{"id":"8b0f2be1.63fb58","type":"debug","z":"c08e758e.83f248","name":"Before format","active":false,"console":"false","complete":"payload","x":444.5,"y":150,"wires":[]},{"id":"77d9ae8.0249a5","type":"debug","z":"c08e758e.83f248","name":"Before format 1.5","active":false,"console":"false","complete":"payload","x":457.5,"y":317,"wires":[]},{"id":"c2fa4de.bbd43b","type":"debug","z":"c08e758e.83f248","name":"After format","active":false,"console":"false","complete":"payload","x":695.5,"y":155,"wires":[]},{"id":"3544f3b5.e3f7bc","type":"debug","z":"c08e758e.83f248","name":"After format 1.5","active":false,"console":"false","complete":"payload","x":709.5,"y":466,"wires":[]},{"id":"80f98cae.ea17d","type":"function","z":"c08e758e.83f248","name":"Merge 2 Messages","func":"context.data = context.data || {};\n\nswitch (msg.topic) {\n    case \"roomTime\":\n        context.data.sensetime = msg.payload;\n        msg = null;\n        break;\n    case \"roomTemperature\":\n        context.data.temperature = msg.payload;\n        msg = null;\n        break;\n        \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(context.data.sensetime != null && context.data.temperature != null) {\n\tres = {};\n    res.payload = JSON.stringify(context.data);\n    res.topic = \"roomTemperature\"\n    context.data = null;\n\treturn res;\n}","outputs":1,"noerr":0,"x":719.5,"y":315,"wires":[["5b56bfdf.18981","278d30ea.234d6"]]},{"id":"5b56bfdf.18981","type":"debug","z":"c08e758e.83f248","name":"After Merge Telemetry","active":false,"console":"false","complete":"payload","x":984.5,"y":355,"wires":[]},{"id":"278d30ea.234d6","type":"udp out","z":"c08e758e.83f248","name":"Send Temp","addr":"localhost","iface":"","port":"6000","ipv":"udp4","outport":"","base64":false,"multicast":"false","x":954.5,"y":277,"wires":[]},{"id":"dc24a620.add818","type":"udp in","z":"ade6ce0.a6dac3","name":"UDP Incoming","iface":"","port":"6000","ipv":"udp4","multicast":"false","group":"","datatype":"utf8","x":150.5,"y":158,"wires":[["1661fdba.19c212","e062ba6b.399718"]]},{"id":"1661fdba.19c212","type":"debug","z":"ade6ce0.a6dac3","name":"incoming data","active":false,"console":"false","complete":"payload","x":382.5,"y":115,"wires":[]},{"id":"e062ba6b.399718","type":"json","z":"ade6ce0.a6dac3","name":"","pretty":true,"x":343.5,"y":193,"wires":[["5f5b48de.a0f938","96334dcf.35094"]]},{"id":"5f5b48de.a0f938","type":"debug","z":"ade6ce0.a6dac3","name":"JSON Format","active":false,"console":"false","complete":"payload","x":553.5,"y":175,"wires":[]},{"id":"96334dcf.35094","type":"function","z":"ade6ce0.a6dac3","name":"Add Topic","func":"var res = {};\n\nres.payload = msg.payload;\nres.topic = \"roomTemperature\";\n\nreturn res;","outputs":1,"noerr":0,"x":537.5,"y":238,"wires":[["c57644a6.23eaf8","ed29b5a1.7f0b68"]]},{"id":"c57644a6.23eaf8","type":"function","z":"ade6ce0.a6dac3","name":"Merge 2 Msgs","func":"context.data = context.data || {};\n\nswitch (msg.topic) {\n    case \"incomingTime\":\n        context.data.recvtime = msg.payload;\n        msg = null;\n        break;\n    case \"roomTemperature\":\n        context.data.room = msg.payload;\n        msg = null;\n        break;\n        \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(context.data.recvtime != null && context.data.room != null) {\n\tres = {};\n    res.payload = context.data;\n    res.topic = \"roomTemperature\"\n    context.data = null;\n\treturn res;\n}","outputs":1,"noerr":0,"x":766.5,"y":296,"wires":[["172e5280.c4779e","22f4e923.348f06","45df71e8.3caf3"]]},{"id":"22f4e923.348f06","type":"mongodb out","z":"ade6ce0.a6dac3","mongodb":"16c942e.6dea1bd","name":"Save Tpsec","collection":"temperaturespec","payonly":true,"upsert":false,"multi":false,"operation":"store","x":982.5,"y":296,"wires":[]},{"id":"172e5280.c4779e","type":"debug","z":"ade6ce0.a6dac3","name":"after merge processing","active":false,"console":"false","complete":"payload","x":995.5,"y":224,"wires":[]},{"id":"45df71e8.3caf3","type":"link out","z":"ade6ce0.a6dac3","name":"","links":["63f3f191.6d82e"],"x":966.5,"y":360,"wires":[]},{"id":"9bf472d5.5e607","type":"inject","z":"ade6ce0.a6dac3","name":"Incoming Time","topic":"incomingTime","payload":"","payloadType":"date","repeat":"1","crontab":"","once":true,"x":159.5,"y":443,"wires":[["76f4d6da.57ddc8","ae6781b3.5c9bb"]]},{"id":"ae6781b3.5c9bb","type":"function","z":"ade6ce0.a6dac3","name":"Format Time","func":"var res = {};\n\nres.payload = new Date(msg.payload);\nres.topic = msg.topic;\n\nreturn res;","outputs":1,"noerr":0,"x":375.5,"y":442,"wires":[["c57644a6.23eaf8","b6eb4216.6a264"]]},{"id":"76f4d6da.57ddc8","type":"debug","z":"ade6ce0.a6dac3","name":"before format2","active":false,"console":"false","complete":"payload","x":382.5,"y":375,"wires":[]},{"id":"b6eb4216.6a264","type":"debug","z":"ade6ce0.a6dac3","name":"after format2","active":false,"console":"false","complete":"payload","x":580.5,"y":510,"wires":[]},{"id":"8d01f456.418378","type":"inject","z":"ade6ce0.a6dac3","name":"Processing Signal","topic":"","payload":"true","payloadType":"bool","repeat":"60","crontab":"","once":false,"x":177.5,"y":655,"wires":[["485506f2.e23438","f522ba68.ac3e88"]]},{"id":"485506f2.e23438","type":"function","z":"ade6ce0.a6dac3","name":"Create Query","func":"  var res = {};\n  res.skip = 0;\n  res.limit = 60;\n  var signal = msg.payload;\n\n  var maxtime = new Date(Date.now() - 1*60*1000).toISOString();\n  var query = {'room.sensetime':{$gte: maxtime}};\n\n  if(signal === true){\n\n      res.payload = query;\n      res.topic = \"mongoQuery\"\n      return res;\n  }","outputs":1,"noerr":0,"x":426.5,"y":655,"wires":[["59dbb6d6.ac8ef8","b935052c.533fb8"]]},{"id":"f522ba68.ac3e88","type":"debug","z":"ade6ce0.a6dac3","name":"boolean signal","active":false,"console":"false","complete":"payload","x":427.5,"y":592,"wires":[]},{"id":"59dbb6d6.ac8ef8","type":"debug","z":"ade6ce0.a6dac3","name":"query signal","active":false,"console":"false","complete":"payload","x":626.5,"y":713,"wires":[]},{"id":"b935052c.533fb8","type":"mongodb in","z":"ade6ce0.a6dac3","mongodb":"16c942e.6dea1bd","name":"Find Tpmin","collection":"temperaturespec","operation":"find","x":642.5,"y":633,"wires":[["7612eeb0.53e79","6ec5435a.83c1ac"]]},{"id":"7612eeb0.53e79","type":"function","z":"ade6ce0.a6dac3","name":"Processing Average","func":"var res = {payload:null};\nvar query = msg.payload;\nvar avgUnit = query[0].room.temperature.unit;\nvar avgPlace = query[0].room.temperature.place;\nvar tempData = 0;\nvar avgTemp = 0;\nvar avgTime = 0;\n\n// procesa la temperatura promedio del intervalo\nfor(var i = 0; i < query.length; i++){\n    \n    tempData = tempData + query[i].room.temperature.data;\n}\n\navgTemp = parseInt(tempData/query.length);\ntempData = 0;\n\n// calcula el tiempo estimado del intervalo\nfor(var i = 0; i < query.length; i++){\n    \n    tempData = tempData + new Date(query[i].room.sensetime).getTime();\n}\n\navgTime = Math.round(tempData/query.length);\navgTime = new Date(avgTime);\n\nres.payload = {protime:new Date(Date.now()), sensetime:avgTime, temperature:{data:avgTemp, unit:avgUnit, place:avgPlace}};\nres.topic = \"avgpminTemperature\";\nreturn res;","outputs":1,"noerr":0,"x":899.5,"y":638,"wires":[["519f6c9a.e586e4","c1e1131f.21d45","a3cd3e6c.9615a"]]},{"id":"519f6c9a.e586e4","type":"debug","z":"ade6ce0.a6dac3","name":"final result","active":false,"console":"false","complete":"payload","x":1122.5,"y":558,"wires":[]},{"id":"a3cd3e6c.9615a","type":"link out","z":"ade6ce0.a6dac3","name":"","links":["a0bb3832.e62178"],"x":1129.5,"y":718,"wires":[]},{"id":"c1e1131f.21d45","type":"mongodb out","z":"ade6ce0.a6dac3","mongodb":"16c942e.6dea1bd","name":"Save Tpmin","collection":"temperaturespmin","payonly":false,"upsert":false,"multi":false,"operation":"store","x":1153.5,"y":641,"wires":[]},{"id":"6ec5435a.83c1ac","type":"debug","z":"ade6ce0.a6dac3","name":"query result","active":false,"console":"false","complete":"payload","x":866.5,"y":722,"wires":[]},{"id":"ed29b5a1.7f0b68","type":"debug","z":"ade6ce0.a6dac3","name":"after topic","active":false,"console":"false","complete":"payload","x":715.5,"y":194,"wires":[]},{"id":"49aebc3d.06b714","type":"serial in","z":"c08e758e.83f248","name":"Send temperature","serial":"1ecea07a.041a","x":134.5,"y":206,"wires":[["8b0f2be1.63fb58","88060cce.5c0ce"]]},{"id":"bd27dc16.d649","type":"http request","z":"7bbd0d2b.54f414","name":"GET /temp/sec/find","method":"GET","ret":"txt","url":"/temperature/sec/find","tls":"","x":157.5,"y":294,"wires":[["1b838656.39782a"]]},{"id":"a3b9264f.7719f8","type":"http request","z":"7bbd0d2b.54f414","name":"GET /temperature/sec/count","method":"GET","ret":"txt","url":"/temperature/sec/count","tls":"","x":189.5,"y":436,"wires":[["e4574998.629e08"]]},{"id":"d4a1e9e1.ef7068","type":"http request","z":"7bbd0d2b.54f414","name":"GET /temp/min/find","method":"GET","ret":"txt","url":"/temperature/min/find","tls":"","x":160.5,"y":370,"wires":[["379c9817.3ad948"]]},{"id":"dadac525.fd80c8","type":"http request","z":"7bbd0d2b.54f414","name":"GET /temp/min/count","method":"GET","ret":"txt","url":"/temperature/min/count","tls":"","x":170.5,"y":510,"wires":[["c173244f.0b7fe8"]]},{"id":"1b838656.39782a","type":"mongodb in","z":"7bbd0d2b.54f414","mongodb":"16c942e.6dea1bd","name":"Find Tpsec","collection":"temperaturespec","operation":"find","x":417.5,"y":294,"wires":[["1fecc886.01aed7"]]},{"id":"379c9817.3ad948","type":"mongodb in","z":"7bbd0d2b.54f414","mongodb":"16c942e.6dea1bd","name":"Find Tpmin","collection":"temperaturespmin","operation":"find","x":417.5,"y":370,"wires":[["f058366d.79cd38"]]},{"id":"e4574998.629e08","type":"mongodb in","z":"7bbd0d2b.54f414","mongodb":"16c942e.6dea1bd","name":"Count Tpsec","collection":"temperaturespec","operation":"count","x":419.5,"y":436,"wires":[["b5f1e673.414e98"]]},{"id":"c173244f.0b7fe8","type":"mongodb in","z":"7bbd0d2b.54f414","mongodb":"16c942e.6dea1bd","name":"Count Tpmin","collection":"temperaturespmin","operation":"count","x":417.5,"y":510,"wires":[["28383037.bead4"]]},{"id":"1fecc886.01aed7","type":"function","z":"7bbd0d2b.54f414","name":"Content type","func":"msg.headers = {\"Content-Type\": \"application/json\"};\nreturn msg;","outputs":1,"noerr":0,"x":722.5,"y":294,"wires":[["1abb6e4a.cc0d02"]]},{"id":"f058366d.79cd38","type":"function","z":"7bbd0d2b.54f414","name":"Content type","func":"msg.headers = {\"Content-Type\": \"application/json\"};\nreturn msg;","outputs":1,"noerr":0,"x":722.5,"y":371,"wires":[["a2802119.1e8a6"]]},{"id":"b5f1e673.414e98","type":"function","z":"7bbd0d2b.54f414","name":"Content type","func":"msg.headers = {\"Content-Type\": \"application/json\"};\nreturn msg;","outputs":1,"noerr":0,"x":723.5,"y":437,"wires":[["709ed8a6.7874d8"]]},{"id":"28383037.bead4","type":"function","z":"7bbd0d2b.54f414","name":"Content type","func":"msg.headers = {\"Content-Type\": \"application/json\"};\nreturn msg;","outputs":1,"noerr":0,"x":720.5,"y":511,"wires":[["dd033c20.997b1"]]},{"id":"1abb6e4a.cc0d02","type":"http response","z":"7bbd0d2b.54f414","name":"find sec","statusCode":"","headers":{},"x":916.5,"y":294,"wires":[]},{"id":"a2802119.1e8a6","type":"http response","z":"7bbd0d2b.54f414","name":"find min","statusCode":"","headers":{},"x":916.5,"y":372,"wires":[]},{"id":"709ed8a6.7874d8","type":"http response","z":"7bbd0d2b.54f414","name":"count sec","statusCode":"","headers":{},"x":917.5,"y":438,"wires":[]},{"id":"dd033c20.997b1","type":"http response","z":"7bbd0d2b.54f414","name":"count min","statusCode":"","headers":{},"x":920.5,"y":512,"wires":[]},{"id":"63f3f191.6d82e","type":"link in","z":"7bbd0d2b.54f414","name":"","links":["45df71e8.3caf3"],"x":73.5,"y":705,"wires":[["bbd93303.2b87f","9a794d1f.67509"]]},{"id":"a0bb3832.e62178","type":"link in","z":"7bbd0d2b.54f414","name":"","links":["a3cd3e6c.9615a"],"x":68.5,"y":887,"wires":[["e498118c.36781","1fe10ecc.6a90f1"]]},{"id":"bbd93303.2b87f","type":"debug","z":"7bbd0d2b.54f414","name":"temperature/secs","active":true,"console":"false","complete":"payload","x":275.5,"y":663,"wires":[]},{"id":"e498118c.36781","type":"debug","z":"7bbd0d2b.54f414","name":"temperature/min","active":false,"console":"false","complete":"payload","x":241.5,"y":855,"wires":[]},{"id":"9a794d1f.67509","type":"function","z":"7bbd0d2b.54f414","name":"Format 4 secs","func":"var input = msg.payload;\nvar time = null;\nvar temperature = 0;\nvar res1 = {payload:null};\nvar res2 = {payload:null};\n\ntime = input.room.sensetime;\ntemp = input.room.temperature.data;\n\nres1.payload = temp;\nres1.topic = \"temperature\";\nres2.payload = time;\nres2.topic = \"time\";\n\nreturn [res1, res2];","outputs":"2","noerr":0,"x":254.5,"y":727,"wires":[["4d4cc177.8611a","e4f3ccb7.e1154","79751258.cfd5ac"],["8c9be9e7.afa708","d7571017.0be9b"]]},{"id":"1fe10ecc.6a90f1","type":"function","z":"7bbd0d2b.54f414","name":"Format 4 mins","func":"var input = msg.payload;\nvar time = null;\nvar temperature = 0;\nvar res1 = {payload:null};\nvar res2 = {payload:null};\n\ntime = input.sensetime;\ntemp = input.temperature.data;\n\nres1.payload = temp;\nres1.topic = \"temperature\";\nres2.payload = time;\nres2.topic = \"time\";\n\nreturn [res1, res2];","outputs":"2","noerr":0,"x":250.5,"y":930,"wires":[["db714e97.177e3","6e7a8c50.593db4","818edaf.e77d628"],["c5e4d7cc.500878","1c188c2b.ac9084"]]},{"id":"e4f3ccb7.e1154","type":"ui_chart","z":"7bbd0d2b.54f414","group":"3252c94d.398546","order":0,"width":0,"height":0,"label":"Histórico de Temperatura (sec)","name":"Temperature Sec Chart","interpolate":"linear","nodata":"¡¡¡¡SIN DATOS!!!!","ymin":"0","ymax":"500","removeOlder":"10","removeOlderUnit":"1","x":578.5,"y":644,"wires":[[],[]]},{"id":"79751258.cfd5ac","type":"ui_gauge","z":"7bbd0d2b.54f414","name":"Instant Sec Temperature","group":"3252c94d.398546","order":0,"width":0,"height":0,"gtype":"gage","title":"Instante","label":"units","format":"{{value}}","min":0,"max":10,"x":579.5,"y":687,"wires":[]},{"id":"8c9be9e7.afa708","type":"ui_text","z":"7bbd0d2b.54f414","group":"3252c94d.398546","order":0,"width":0,"height":0,"name":"Sense Time","label":"text","format":"{{msg.payload}}","layout":"row-spread","x":540.5,"y":730,"wires":[]},{"id":"4d4cc177.8611a","type":"debug","z":"7bbd0d2b.54f414","name":"temperature","active":false,"console":"false","complete":"payload","x":537.5,"y":600,"wires":[]},{"id":"d7571017.0be9b","type":"debug","z":"7bbd0d2b.54f414","name":"timestamp","active":false,"console":"false","complete":"payload","x":541.5,"y":778,"wires":[]},{"id":"db714e97.177e3","type":"debug","z":"7bbd0d2b.54f414","name":"temperature","active":false,"console":"false","complete":"payload","x":543.5,"y":862,"wires":[]},{"id":"1c188c2b.ac9084","type":"debug","z":"7bbd0d2b.54f414","name":"timestamp","active":true,"console":"false","complete":"payload","x":542.5,"y":1058,"wires":[]},{"id":"6e7a8c50.593db4","type":"ui_chart","z":"7bbd0d2b.54f414","group":"3252c94d.398546","order":0,"width":0,"height":0,"label":"Histórico de Temperatura (min)","name":"Temperature Sec Chart","interpolate":"linear","nodata":"¡¡¡¡Sin DATOS!!!!","ymin":"0","ymax":"500","removeOlder":"20","removeOlderUnit":"60","x":584,"y":909,"wires":[[],[]]},{"id":"818edaf.e77d628","type":"ui_gauge","z":"7bbd0d2b.54f414","name":"Instant Min Temperature","group":"3252c94d.398546","order":0,"width":0,"height":0,"gtype":"gage","title":"Gauge","label":"units","format":"{{value}}","min":0,"max":10,"x":585,"y":957,"wires":[]},{"id":"c5e4d7cc.500878","type":"ui_text","z":"7bbd0d2b.54f414","group":"3252c94d.398546","order":0,"width":0,"height":0,"name":"Sense Time","label":"text","format":"{{msg.payload}}","layout":"row-spread","x":545,"y":1007,"wires":[]}]
+[
+    {
+        "id": "3646570c.b2c578",
+        "type": "tab",
+        "label": "Telemetry Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f00bff84.430ca",
+        "type": "inject",
+        "z": "3646570c.b2c578",
+        "name": "Sensor Time",
+        "topic": "roomTime",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "x": 132.5,
+        "y": 383,
+        "wires": [
+            [
+                "1e9a854.b6b177b",
+                "b1b77913.929098"
+            ]
+        ]
+    },
+    {
+        "id": "c22b821.0e7578",
+        "type": "function",
+        "z": "3646570c.b2c578",
+        "name": "Format Temperature",
+        "func": "var res = {};\nvar tempArray = [];\nvar tempUnit =\"\";\nvar tempUnit1 =\"\";\nvar tempUnit2 =\"\";\nvar tempUnit3 =\"\";\n\ntempString = msg.payload;\ntempArray = tempString.split(\" \");\ntempUnit = tempArray[1];\ntempUnit1 = tempArray[3];\ntempUnit2 = tempArray[5];\ntempUnit3 = tempArray[7];\nres.topic = \"roomMesures\";\n\nres.payload = { \"Temperatura\": parseInt(tempArray[0]), \"Unidad temperatura\": tempUnit, \"Monoxido de carbono\": parseInt(tempArray[2]), \"Unidad monoxido\": tempUnit1, \"Ruido\": parseInt(tempArray[4]), \"Unidad ruido\": tempUnit2, \"Iluminacion\": parseInt(tempArray[6]), \"Unidad iluminacion\": tempUnit3}\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "ea370254.c5b75",
+                "d04d649b.ad5f48"
+            ]
+        ]
+    },
+    {
+        "id": "b1b77913.929098",
+        "type": "function",
+        "z": "3646570c.b2c578",
+        "name": "Format Time",
+        "func": "var res = {};\n\nres.payload = new Date(msg.payload);\nres.topic = msg.topic;\n\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "66b066f6.b7f338",
+                "d04d649b.ad5f48"
+            ]
+        ]
+    },
+    {
+        "id": "e568827f.3349",
+        "type": "debug",
+        "z": "3646570c.b2c578",
+        "name": "Before format",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 400,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1e9a854.b6b177b",
+        "type": "debug",
+        "z": "3646570c.b2c578",
+        "name": "Before format 1.5",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 250,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ea370254.c5b75",
+        "type": "debug",
+        "z": "3646570c.b2c578",
+        "name": "After format",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 590,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "66b066f6.b7f338",
+        "type": "debug",
+        "z": "3646570c.b2c578",
+        "name": "After format 1.5",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 480,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d04d649b.ad5f48",
+        "type": "function",
+        "z": "3646570c.b2c578",
+        "name": "Merge 2 Messages",
+        "func": "context.data = context.data || {};\n\nswitch (msg.topic) {\n    case \"roomTime\":\n        context.data.sensetime = msg.payload;\n        msg = null;\n        break;\n    case \"roomMesures\":\n        context.data.Mesures = msg.payload;\n        msg = null;\n        break;\n        \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(context.data.sensetime != null && context.data.Mesures != null) {\n\tres = {};\n    res.payload = JSON.stringify(context.data);\n    res.topic = \"roomMesures\"\n    context.data = null;\n\treturn res;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [
+                "24aaaf8c.2ce8d",
+                "b04d4707.bd3b98"
+            ]
+        ]
+    },
+    {
+        "id": "24aaaf8c.2ce8d",
+        "type": "debug",
+        "z": "3646570c.b2c578",
+        "name": "After Merge Telemetry",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 680,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fc8b0fcb.459fa",
+        "type": "inject",
+        "z": "3646570c.b2c578",
+        "name": "",
+        "topic": "inject",
+        "payload": "24 C 280 ppm 70 DB 300 Lux",
+        "payloadType": "str",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "c22b821.0e7578",
+                "e568827f.3349"
+            ]
+        ]
+    },
+    {
+        "id": "b04d4707.bd3b98",
+        "type": "mqtt out",
+        "z": "3646570c.b2c578",
+        "name": "",
+        "topic": "piso1.nivel1.area1",
+        "qos": "",
+        "retain": "",
+        "broker": "95cf873f.5bf998",
+        "x": 670,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "95cf873f.5bf998",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "172.24.42.22",
+        "port": "8083",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    }
+]
