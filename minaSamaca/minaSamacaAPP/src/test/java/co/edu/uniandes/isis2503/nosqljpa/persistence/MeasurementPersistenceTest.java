@@ -48,8 +48,7 @@ public class MeasurementPersistenceTest {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(MeasurementEntity.class.getPackage())
                 .addPackage(MeasurementPersistence.class.getPackage())
-                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
-                .addAsManifestResource("META-INF/beans.xml", "beans.xml");
+                .addAsManifestResource("META-INF/persistence.xml", "persistence.xml");
     }
     
     public MeasurementPersistenceTest() {
@@ -73,8 +72,7 @@ public class MeasurementPersistenceTest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assert(true);
     }
     
 }

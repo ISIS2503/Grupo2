@@ -1,0 +1,92 @@
+{
+	"id": "12c69737-6082-6a00-30ba-433f770d6aa9",
+	"name": "MinaMedidas",
+	"description": "{\n\t\"variable\": \"Temperatura\",\n\t\"unidad\": \"C\",\n\t\"valor\": \"24\",\n\t\"fecha\": \"2017-09-24T03:11:10.502Z\",\n\t\"ubicacion\": \"piso1.nivel1.area1\"\n}",
+	"order": [
+		"7822911f-804d-fdc0-0045-18c04d94d6cb",
+		"ace596ff-b93b-22ac-ca6a-b237c5f493bc",
+		"7d466e7f-b6d0-4fd8-dc69-beb6eba83ff4"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1506356451018,
+	"owner": "906178",
+	"public": false,
+	"requests": [
+		{
+			"id": "7822911f-804d-fdc0-0045-18c04d94d6cb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/measure/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1506386348179,
+			"name": "http://localhost:8080/measure",
+			"description": "",
+			"collectionId": "12c69737-6082-6a00-30ba-433f770d6aa9",
+			"responses": [],
+			"rawModeData": "{\n\t\"id\": \"1\",\n\t\"variable\": \"Temperatura\",\n\t\"unidad\": \"C\",\n\t\"valor\": \"24\",\n\t\"fecha\": \"2017-09-24T03:11:10.502Z\",\n\t\"ubicacion\": \"piso1.nivel1.area1\"\n}"
+		},
+		{
+			"id": "7d466e7f-b6d0-4fd8-dc69-beb6eba83ff4",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/measure/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "12c69737-6082-6a00-30ba-433f770d6aa9",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:8080/measure/",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1506386375086,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "ace596ff-b93b-22ac-ca6a-b237c5f493bc",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/measure/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "12c69737-6082-6a00-30ba-433f770d6aa9",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:8080/measure/1",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1506386365531,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
