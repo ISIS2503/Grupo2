@@ -35,6 +35,9 @@ import org.junit.runner.RunWith;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import co.edu.uniandes.isis2503.nosqljpa.logic.MeasurementLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.MeasurementDTO;
+import java.util.List;
 
 /**
  *
@@ -43,12 +46,46 @@ import org.jboss.shrinkwrap.api.spec.JavaArchive;
 @RunWith(Arquillian.class)
 public class MeasurementPersistenceTest {
     
+    MeasurementLogic instanciaLogicaMuestras = new MeasurementLogic();
+    
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(MeasurementEntity.class.getPackage())
                 .addPackage(MeasurementPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml");
+    }
+    
+    //Prueba creación/agregación de DTO
+    @Test
+    public void pruebaCreacionTest(){   
+     MeasurementDTO medida;
+     medida = new MeasurementDTO("1","1","1","1","1","1");
+    MeasurementDTO dtoVerificacion = instanciaLogicaMuestras.add(medida);
+    assertNotNull(dtoVerificacion);
+    }
+    
+    //Prueba update de datos DTO
+    @Test
+    public void pruebaModificacionTest(){
+    MeasurementDTO medida;
+    medida = new MeasurementDTO("1","1","1","1","1","2"); 
+    MeasurementDTO dtoVerificacion = instanciaLogicaMuestras.update(medida);
+    assertEquals(dtoVerificacion, medida);
+    }
+    
+    //Prueba de busqueda de Registro por medio de ID
+    @Test
+    public void pruebaBusquedaTest(){
+    MeasurementDTO dtoVerificacion = instanciaLogicaMuestras.find("1");
+    assertNotNull(dtoVerificacion);
+    }
+    
+    //Prueba obtencino de todos los datos QUE DICEN LOS IJUEPUTAS
+    @Test
+    public void pruebaObtencionTest(){
+    List<MeasurementDTO> laLista = instanciaLogicaMuestras.all();
+    assert(laLista.isEmpty());
     }
     
     public MeasurementPersistenceTest() {

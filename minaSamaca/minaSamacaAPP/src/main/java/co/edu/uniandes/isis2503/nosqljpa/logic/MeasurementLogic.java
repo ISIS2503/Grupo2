@@ -42,6 +42,7 @@ public class MeasurementLogic implements IMeasurementLogic {
         this.persistence = new MeasurementPersistence();
     }
 
+    //Abrega un elemento de medida DTO a la base de datos
     @Override
     public MeasurementDTO add(MeasurementDTO dto) {
         if (dto.getId() == null) {

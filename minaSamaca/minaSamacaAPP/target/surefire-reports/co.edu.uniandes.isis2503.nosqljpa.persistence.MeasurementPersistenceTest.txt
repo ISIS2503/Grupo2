@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: co.edu.uniandes.isis2503.nosqljpa.persistence.MeasurementPersistenceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.551 sec <<< FAILURE!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.093 sec <<< FAILURE!
 co.edu.uniandes.isis2503.nosqljpa.persistence.MeasurementPersistenceTest  Time elapsed: 0 sec  <<< ERROR!
 org.jboss.arquillian.container.test.impl.client.deployment.ValidationException: DeploymentScenario contains a target (_DEFAULT_) not matching any defined Container in the registry.
 Please include at least 1 Deployable Container on your Classpath.
