@@ -20,13 +20,7 @@ public class JPAConnection {
     public JPAConnection() {
         if (entityManager == null) {
             EntityManagerFactory emf;
-            if (DB.equals(DERBY)) {
                 emf = Persistence.createEntityManagerFactory(DERBY);
-            } else {
-                Map<String, String> propertyMap = new HashMap<>();
-                propertyMap.put(CassandraConstants.CQL_VERSION, CassandraConstants.CQL_VERSION_3_0);
-                emf = Persistence.createEntityManagerFactory(CASSANDRA, propertyMap);
-            }
             entityManager = emf.createEntityManager();
         }
     }
