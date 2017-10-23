@@ -23,6 +23,7 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.persistence;
 
+import ch.qos.logback.classic.util.ContextInitializer;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -109,10 +110,10 @@ public class Persistencer<T, PK> {
             return false;
         }
     }
-
-    public T findCode(String code) {
+    
+        public T findUbicacion(String code) {
         T entity;
-        String queryString = "Select c FROM " + entityClass.getSimpleName() + " c where c.code = :code1";
+        String queryString = "Select c FROM " + entityClass.getSimpleName() + " c where c.ubicacion = :code1";
         Query query = entityManager.createQuery(queryString).setParameter("code1", code);
         try {
             entity = (T) query.getSingleResult();
@@ -122,24 +123,56 @@ public class Persistencer<T, PK> {
         }
         return entity;
     }
-
-    public List<T> findBySensorId(String id) {
-        List<T> entities;
-        String queryString = "Select c FROM " + entityClass.getSimpleName() + " c where c.idSensor = :id1";
-        Query query = entityManager.createQuery(queryString).setParameter("id1", id);
+        
+    public T findLast()
+    {
+        T entity;
+        String queryString = "select c from " +entityClass.getSimpleName()+ " c";
+        Query query = entityManager.createQuery(queryString);
         try {
-            entities = query.getResultList();
+            entity = (T) query.getSingleResult();
         } catch (NoResultException | NonUniqueResultException e) {
-            entities = null;
+            entity = null;
             LOG.log(Level.WARNING, e.getMessage());
         }
-        return entities;
+        return entity;
     }
+    
+    public Boolean deleteAll()
+    {
+       int number;
+       entityManager.getTransaction().begin();
+       String queryString = "DELETE "+entityClass.getSimpleName()+ " c";
+       Query query = entityManager.createQuery(queryString);
+       try
+       {
+           number = query.executeUpdate();
+           System.out.println("=====================================");
+           System.out.println(number);
+           entityManager.getTransaction().commit();
+           entityManager.clear();
+           entityManager.flush();
+           return true;
 
-    public List<T> findByRoomId(String id) {
+       }
+       catch (NoResultException | NonUniqueResultException e) {
+           entityManager.getTransaction().rollback();
+           System.out.println("#####3############################################");
+           LOG.log(Level.WARNING, e.getMessage()); 
+           return false;
+        }
+    }
+    
+    
+        public List<T> lastest(String pUbicacion, String pVariable) {
         List<T> entities;
-        String queryString = "Select c FROM " + entityClass.getSimpleName() + " c where c.roomID = :id1";
-        Query query = entityManager.createQuery(queryString).setParameter("id1", id);
+        char q = '"';
+        String c = "'";
+        String s = entityClass.getSimpleName().replace("Entity", "").toUpperCase();
+        System.out.println("#####3############################################");
+        System.out.println(s);
+        String queryString = "SELECT * FROM " +q+s+q+" WHERE "+q+"ubicacion"+q+" = "+c+pUbicacion+c+" AND "+q+"variable"+q+" = "+c+pVariable+c+" LIMIT 10 ALLOW FILTERING";
+        Query query = entityManager.createNativeQuery(queryString, entityClass);
         try {
             entities = query.getResultList();
         } catch (NoResultException | NonUniqueResultException e) {

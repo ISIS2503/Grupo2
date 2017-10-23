@@ -24,9 +24,15 @@
 package co.edu.uniandes.isis2503.nosqljpa.model.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.OrderColumn;
+import javax.persistence.ForeignKey;
+import javax.persistence.Column;
 import org.hibernate.annotations.DynamicUpdate;
 
 /**
@@ -40,10 +46,18 @@ public class MeasurementEntity implements Serializable {
     
     @Id
     private String id;
+    
+    @Column
     private String variable;
-    private String valor;    
+    
+    private double valor; 
+    
     private String unidad;
-    private String fecha;
+    
+    @OrderColumn
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
+    
     private String ubicacion;
     
     public MeasurementEntity()
@@ -52,7 +66,7 @@ public class MeasurementEntity implements Serializable {
     }
     
 
-    public MeasurementEntity(String id, String variable, String valor, String unidad, String fecha, String ubicacion) {
+    public MeasurementEntity(String id, String variable, double valor, String unidad, Date fecha, String ubicacion) {
         this.id = id;
         this.variable = variable;
         this.valor = valor;
@@ -78,11 +92,11 @@ public class MeasurementEntity implements Serializable {
         this.variable = variable;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -94,11 +108,11 @@ public class MeasurementEntity implements Serializable {
         this.unidad = unidad;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -110,6 +124,11 @@ public class MeasurementEntity implements Serializable {
         this.ubicacion = ubicacion;
     }
     
+    @Override
+    public String toString()
+    {
+        return "Measurement";
+    }
     
-    
+      
 }

@@ -72,4 +72,40 @@ public class MeasurementLogic implements IMeasurementLogic {
     public Boolean delete(String id) {
         return persistence.delete(id);
     }
+    
+    @Override
+    public MeasurementDTO findLast(){
+       return CONVERTER.entityToDto(persistence.findLast());
+    }
+
+    @Override
+    public Boolean deleteAll() {
+        return persistence.deleteAll();
+    }
+    
+    @Override
+    public List<MeasurementDTO> lastest(String pUbicacion, String pVariable)
+    {
+        return CONVERTER.listEntitiesToListDTOs(persistence.lastest(pUbicacion, pVariable));
+    }
+
+    @Override
+    public Boolean fueraRango(String pUbicacion, String pVariable, double pLimInferior, double pLimSuperior) {
+        List<MeasurementDTO> lista = lastest(pUbicacion, pVariable);
+        if (lista.size() < 10)
+            return false;
+        double suma = 0;
+        double resultado = 0;
+        for (MeasurementDTO m : lista)
+        {
+            suma+=m.getValor();
+        }
+        resultado=suma/10;
+        System.out.println(resultado+ " inferior: "+pLimInferior+" superior: "+pLimSuperior);
+        if (pLimInferior <= resultado && resultado <= pLimSuperior)
+            return false;
+        else
+            return true;
+    }
+    
 }

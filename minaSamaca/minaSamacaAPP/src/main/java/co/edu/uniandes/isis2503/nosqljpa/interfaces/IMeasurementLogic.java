@@ -36,4 +36,8 @@ public interface IMeasurementLogic {
     public MeasurementDTO find(String id);
     public List<MeasurementDTO> all();
     public Boolean delete(String id);
+    public MeasurementDTO findLast();
+    public Boolean deleteAll();
+    public List<MeasurementDTO> lastest(String pUbicacion, String pVariable);
+    public Boolean fueraRango(String pUbicacion, String pVariable, double pLimInferior, double pLimSuperior);
 }

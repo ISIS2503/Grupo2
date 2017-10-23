@@ -23,6 +23,7 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.model.dto.model;
 
+import java.util.Date;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -33,9 +34,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class MeasurementDTO {
     private String id;
     private String variable;
-    private String valor;    
+    private double valor;    
     private String unidad;
-    private String fecha;
+    private Date fecha;
     private String ubicacion;
     
     public MeasurementDTO()
@@ -43,7 +44,7 @@ public class MeasurementDTO {
         
     }
 
-    public MeasurementDTO(String id, String variable, String valor, String unidad, String fecha, String ubicacion) {
+    public MeasurementDTO(String id, String variable, double valor, String unidad, Date fecha, String ubicacion) {
         this.id = id;
         this.variable = variable;
         this.valor = valor;
@@ -68,11 +69,11 @@ public class MeasurementDTO {
         this.variable = variable;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -84,11 +85,11 @@ public class MeasurementDTO {
         this.unidad = unidad;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -100,5 +101,10 @@ public class MeasurementDTO {
         this.ubicacion = ubicacion;
     }
 
+    @Override
+    public String toString()
+    {
+        return "Measurement";
+    }
    
 }

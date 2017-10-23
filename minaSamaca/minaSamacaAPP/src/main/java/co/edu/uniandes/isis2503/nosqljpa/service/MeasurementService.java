@@ -23,16 +23,21 @@
  */
 package co.edu.uniandes.isis2503.nosqljpa.service;
 
+import co.edu.uniandes.isis2503.nosqljpa.interfaces.ILastMeasureLogic;
 import co.edu.uniandes.isis2503.nosqljpa.interfaces.IMeasurementLogic;
+import co.edu.uniandes.isis2503.nosqljpa.logic.LastMeasureLogic;
 import co.edu.uniandes.isis2503.nosqljpa.logic.MeasurementLogic;
+import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.LastMeasureDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.MeasurementDTO;
 import java.util.List;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -43,14 +48,62 @@ import javax.ws.rs.core.MediaType;
 public class MeasurementService {
     
     private final IMeasurementLogic measurementLogic;
+    private final ILastMeasureLogic lastMeasureLogic;
+    private static double limSup;
+    private static double limInf;
     
     public MeasurementService()
     {
         this.measurementLogic = new MeasurementLogic();
+        this.lastMeasureLogic = new LastMeasureLogic();
+        this.limSup = 0;
+        this.limInf = 0;
     }
+    
+    public void tipoVariable(String pVariable)
+    {
+        if (pVariable.equalsIgnoreCase("temperatura"))
+        {
+            this.limInf = 21.5;
+            this.limSup = 27.0;
+        }
+        else if (pVariable.equalsIgnoreCase("ruido"))
+        {
+            this.limInf = 80;
+            this.limSup = 85;
+        }
+        else if (pVariable.equalsIgnoreCase("monoxido"))
+        {
+            this.limInf = 0;
+            this.limSup = 350;
+        }
+        else if (pVariable.equalsIgnoreCase("iluminacion"))
+        {
+            this.limInf = 100;
+            this.limSup = 500;
+        }
+    }
+    
     
     @POST
     public MeasurementDTO add(MeasurementDTO dto) {
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        String ubicacion = dto.getUbicacion();
+        String variable = dto.getVariable();
+        LastMeasureDTO anterior = lastMeasureLogic.find(ubicacion);
+        long ant = anterior.getTime().getTime()+ 300000;
+        System.out.println("Fecha anterior: "+ant+" Fecha nueva: "+dto.getFecha().getTime());
+        if (ant < dto.getFecha().getTime())
+        {
+            System.out.println("Alerta");
+        }
+        LastMeasureDTO last = new LastMeasureDTO(dto.getUbicacion(), dto.getFecha());
+        lastMeasureLogic.update(last);
+        
+        tipoVariable(variable);
+        if (measurementLogic.fueraRango(ubicacion, variable, limInf, limSup))
+            System.out.println("Alerta en: "+ubicacion+ " sensor de "+variable+" fuera de rango");
+        
         return measurementLogic.add(dto);
     }
     
@@ -60,9 +113,31 @@ public class MeasurementService {
     }
     
     @GET
+    @Path("/last")
+    public MeasurementDTO findLast() {
+        return measurementLogic.findLast();
+    }
+    
+    @GET
     @Path("/{id}")
     public MeasurementDTO get(@PathParam("id") String id){
         return measurementLogic.find(id);
+    }
+    
+    @DELETE
+    @Path("/delete")
+    public Response deleteAll()
+    {
+        measurementLogic.deleteAll();
+        return Response.status(200).header("Access-Control-Allow-Origin", "*").entity("Sucessful: Room was deleted").build();
+    }
+    
+    
+    @GET
+    @Path("/lastest/{ubicacion}-{variable}")
+    public List<MeasurementDTO> getlastest(@PathParam("ubicacion") String pUbicacion, @PathParam("variable") String pVariable)
+    {
+        return measurementLogic.lastest(pUbicacion, pVariable);
     }
     
 }

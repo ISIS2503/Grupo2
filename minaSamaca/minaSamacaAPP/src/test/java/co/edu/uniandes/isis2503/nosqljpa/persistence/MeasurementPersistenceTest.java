@@ -37,6 +37,7 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import co.edu.uniandes.isis2503.nosqljpa.logic.MeasurementLogic;
 import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.MeasurementDTO;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,7 +61,8 @@ public class MeasurementPersistenceTest {
     @Test
     public void pruebaCreacionTest(){   
      MeasurementDTO medida;
-     medida = new MeasurementDTO("1","1","1","1","1","1");
+     Date fecha = new Date();
+     medida = new MeasurementDTO("1","1",1,"1", fecha,"1");
     MeasurementDTO dtoVerificacion = instanciaLogicaMuestras.add(medida);
     assertNotNull(dtoVerificacion);
     }
@@ -69,7 +71,8 @@ public class MeasurementPersistenceTest {
     @Test
     public void pruebaModificacionTest(){
     MeasurementDTO medida;
-    medida = new MeasurementDTO("1","1","1","1","1","2"); 
+    Date fecha = new Date();
+    medida = new MeasurementDTO("1","1",1,"1",fecha,"2"); 
     MeasurementDTO dtoVerificacion = instanciaLogicaMuestras.update(medida);
     assertEquals(dtoVerificacion, medida);
     }

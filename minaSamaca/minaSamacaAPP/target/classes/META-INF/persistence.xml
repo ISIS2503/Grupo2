@@ -25,6 +25,7 @@
   <persistence-unit name="cassandra_db" transaction-type="RESOURCE_LOCAL">
     <provider>com.impetus.kundera.KunderaPersistence</provider>
     <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.MeasurementEntity</class>
+    <class>co.edu.uniandes.isis2503.nosqljpa.model.entity.LastMeasureEntity</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="kundera.nodes" value="172.24.42.22"/>
@@ -36,7 +37,7 @@
       <property name="kundera.pool.size.max.idle" value="100"/>
       <property name="kundera.pool.size.max.active" value="100"/>
       <property name="kundera.pool.size.max.total" value="100"/>
-      <property name="kundera.ddl.auto.prepare" value="update"/>
+      <property name="kundera.ddl.auto.prepare" value="create-drop"/>
     </properties>
   </persistence-unit>
 </persistence>
