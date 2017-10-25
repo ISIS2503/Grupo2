@@ -1,0 +1,406 @@
+[
+    {
+        "id": "839bca76.a17c48",
+        "type": "tab",
+        "label": "Telemetry Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "be699244.4dc6e",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false
+    },
+    {
+        "id": "95cf873f.5bf998",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "172.24.42.22",
+        "port": "8083",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "e8bda434.7fe2a8",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "172.24.42.37",
+        "port": "8083",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "7c03e8a2.0b8f58",
+        "type": "inject",
+        "z": "839bca76.a17c48",
+        "name": "Sensor Time",
+        "topic": "roomTime",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "x": 132.5,
+        "y": 383,
+        "wires": [
+            [
+                "37f2de83.c11702",
+                "6c0732e9.41c94c"
+            ]
+        ]
+    },
+    {
+        "id": "724cb931.ce0648",
+        "type": "function",
+        "z": "839bca76.a17c48",
+        "name": "Format Temperature",
+        "func": "var res = {};\nvar tempArray = [];\nvar tempUnit =\"\";\nvar tempUnit1 =\"\";\nvar tempUnit2 =\"\";\nvar tempUnit3 =\"\";\n\ntempString = msg.payload;\ntempArray = tempString.split(\" \");\ntempUnit = tempArray[1];\ntempUnit1 = tempArray[3];\ntempUnit2 = tempArray[5];\ntempUnit3 = tempArray[7];\nres.topic = \"roomMesures\";\n\nres.payload = { \"Temperatura\": parseInt(tempArray[0]), \"Unidad temperatura\": tempUnit, \"Monoxido de carbono\": parseInt(tempArray[2]), \"Unidad monoxido\": tempUnit1, \"Ruido\": parseInt(tempArray[4]), \"Unidad ruido\": tempUnit2, \"Iluminacion\": parseInt(tempArray[6]), \"Unidad iluminacion\": tempUnit3}\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "93aa2e7f.3a701",
+                "62019a9f.783364"
+            ]
+        ]
+    },
+    {
+        "id": "6c0732e9.41c94c",
+        "type": "function",
+        "z": "839bca76.a17c48",
+        "name": "Format Time",
+        "func": "var res = {};\n\nres.payload = new Date(msg.payload);\nres.topic = msg.topic;\n\nreturn res;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "46653be6.d551b4",
+                "62019a9f.783364"
+            ]
+        ]
+    },
+    {
+        "id": "e3b2bbe1.e03868",
+        "type": "debug",
+        "z": "839bca76.a17c48",
+        "name": "Before format",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "37f2de83.c11702",
+        "type": "debug",
+        "z": "839bca76.a17c48",
+        "name": "Before format 1.5",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 350,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "93aa2e7f.3a701",
+        "type": "debug",
+        "z": "839bca76.a17c48",
+        "name": "After format",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "46653be6.d551b4",
+        "type": "debug",
+        "z": "839bca76.a17c48",
+        "name": "After format 1.5",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 560,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "62019a9f.783364",
+        "type": "function",
+        "z": "839bca76.a17c48",
+        "name": "Merge 2 Messages",
+        "func": "context.data = context.data || {};\nswitch (msg.topic) {\n    case \"roomTime\":\n        context.data.sensetime = msg.payload;\n        msg = null;\n        break;\n    case \"roomMesures\":\n        context.data.Mesures = msg.payload;\n        msg = null;\n        break;\n        \n    default:\n        msg = null;\n    \tbreak;\n}\n\nif(context.data.sensetime != null && context.data.Mesures != null) {\n\tres = {};\n    res.payload = JSON.stringify(context.data);\n    res.topic = \"roomMesures\"\n    context.data = null;\n\treturn res;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "764bb266.8fffec",
+                "2d5fbefe.7526c2"
+            ]
+        ]
+    },
+    {
+        "id": "764bb266.8fffec",
+        "type": "debug",
+        "z": "839bca76.a17c48",
+        "name": "After Merge Telemetry",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 820,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c64a1f1.cdf3ce",
+        "type": "inject",
+        "z": "839bca76.a17c48",
+        "name": "datos",
+        "topic": "inject",
+        "payload": "24 C 280 ppm 70 DB 300 Lux",
+        "payloadType": "str",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "724cb931.ce0648",
+                "e3b2bbe1.e03868"
+            ]
+        ]
+    },
+    {
+        "id": "2d5fbefe.7526c2",
+        "type": "mqtt out",
+        "z": "839bca76.a17c48",
+        "name": "",
+        "topic": "nivel1.area1",
+        "qos": "",
+        "retain": "",
+        "broker": "95cf873f.5bf998",
+        "x": 830,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5d9f3111.c97af",
+        "type": "mqtt in",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "topic": "alertaRango.nivel1.area1",
+        "qos": "0",
+        "broker": "95cf873f.5bf998",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "5b826d2.2fe9f94",
+                "26041e5b.525592",
+                "5f9251e9.19398"
+            ]
+        ]
+    },
+    {
+        "id": "5b826d2.2fe9f94",
+        "type": "debug",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 430,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d69f49ad.2289e8",
+        "type": "mqtt in",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "topic": "alertaLinea.nivel1.area1",
+        "qos": "2",
+        "broker": "95cf873f.5bf998",
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "f1250a42.494228",
+                "40bc33b2.27464c"
+            ]
+        ]
+    },
+    {
+        "id": "f1250a42.494228",
+        "type": "e-mail",
+        "z": "be699244.4dc6e",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "secure": true,
+        "name": "js.prieto10@uniandes.edu.co",
+        "dname": "send email",
+        "x": 370,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "40bc33b2.27464c",
+        "type": "debug",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 370,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5f9251e9.19398",
+        "type": "e-mail",
+        "z": "be699244.4dc6e",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "secure": false,
+        "name": "js.prieto10@uniandes.edu.co",
+        "dname": "send email",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b46af969.aa4eb8",
+        "type": "mqtt in",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "topic": "actuador.nivel1.area1",
+        "qos": "2",
+        "broker": "95cf873f.5bf998",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "5cf76d2.6361194",
+                "26041e5b.525592"
+            ]
+        ]
+    },
+    {
+        "id": "5cf76d2.6361194",
+        "type": "debug",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 350,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "26041e5b.525592",
+        "type": "trigger",
+        "z": "be699244.4dc6e",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "hr",
+        "reset": "desperto",
+        "name": "",
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "939a851b.e18fc8"
+            ]
+        ]
+    },
+    {
+        "id": "939a851b.e18fc8",
+        "type": "switch",
+        "z": "be699244.4dc6e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 1,
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "cd230655.025408"
+            ]
+        ]
+    },
+    {
+        "id": "83c8220f.7753c",
+        "type": "e-mail",
+        "z": "be699244.4dc6e",
+        "server": "smtp.office365.com",
+        "port": "587",
+        "secure": false,
+        "name": "js.prieto10@uniandes.edu.co",
+        "dname": "send email",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cd230655.025408",
+        "type": "template",
+        "z": "be699244.4dc6e",
+        "name": "mensaje",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "Ha pasado una hora y el actuador no se ha apagado",
+        "output": "str",
+        "x": 680,
+        "y": 220,
+        "wires": [
+            [
+                "83c8220f.7753c"
+            ]
+        ]
+    }
+]

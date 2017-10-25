@@ -88,6 +88,7 @@ public class MeasurementService {
     @POST
     public MeasurementDTO add(MeasurementDTO dto) {
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        /**
         String ubicacion = dto.getUbicacion();
         String variable = dto.getVariable();
         LastMeasureDTO anterior = lastMeasureLogic.find(ubicacion);
@@ -104,7 +105,9 @@ public class MeasurementService {
         if (measurementLogic.fueraRango(ubicacion, variable, limInf, limSup))
             System.out.println("Alerta en: "+ubicacion+ " sensor de "+variable+" fuera de rango");
         
+        */
         return measurementLogic.add(dto);
+        
     }
     
     @GET
