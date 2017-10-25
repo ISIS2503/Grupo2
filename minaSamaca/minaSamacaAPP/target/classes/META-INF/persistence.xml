@@ -33,10 +33,10 @@
       <property name="kundera.keyspace" value="measure"/>
       <property name="kundera.dialect" value="cassandra"/>
       <property name="kundera.client.lookup.class" value="com.impetus.client.cassandra.thrift.ThriftClientFactory"/>
-      <property name="kundera.pool.size.min.idle" value="25"/>
-      <property name="kundera.pool.size.max.idle" value="100"/>
-      <property name="kundera.pool.size.max.active" value="100"/>
-      <property name="kundera.pool.size.max.total" value="100"/>
+      <property name="kundera.pool.size.min.idle" value="50"/>
+      <property name="kundera.pool.size.max.idle" value="200"/>
+      <property name="kundera.pool.size.max.active" value="200"/>
+      <property name="kundera.pool.size.max.total" value="200"/>
       <property name="kundera.ddl.auto.prepare" value="create-drop"/>
     </properties>
   </persistence-unit>
