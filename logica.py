@@ -135,9 +135,6 @@ print('comenzo')
 x = str('nivel1.area1')
 consumer = KafkaConsumer(x, group_id='hola', bootstrap_servers=['localhost:8090'])
 
-fechainicial = str(arrow.utcnow().shift(minutes=-1))
-
-fechaAnterior = milis(fechainicial)
 print(fechaAnterior, "que pasaaa")
 
 ultimasT = list()
@@ -163,13 +160,11 @@ for mensaje in consumer:
     iluminacion = str(mesures['Iluminacion'])
     unidadI = str(mesures['Unidad iluminacion'])
  
-    stamp = fechaAnterior+300000
+    stamp = time.time()+300000
     times = milis(sensetime)
 
     if times>stamp:
         mqtt('alertaLinea.nivel1.area1', 'Sensor fuera de linea en '+x)
-    
-    fechaAnterior = times
 
 
     anteriores(ultimasT, unidadT, float(temperatura), temperaturaInf, temperaturaSup)
