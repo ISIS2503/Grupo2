@@ -56,9 +56,8 @@ def anteriores(lista, tipoVariable, medicion, inf, sup):
 
     else:
         suma = sum( i for i in lista)
-        lista.pop()
-        lista.insert(0, medicion)
         promedio = suma/10
+        lista[:]=[]
         if not (inf<=medicion<=sup):
             mensajeA = 'Sensor '+tipoVariable+' fuera de rango. promeido actual '+str(promedio)
             mqtt('alertaRango.nivel1.area1', mensajeA)
