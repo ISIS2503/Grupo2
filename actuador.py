@@ -53,7 +53,6 @@ while True:
   if (variable != '0'):
     actuador.cambiarEstado(True)
     print(actuador.darEstado())
-    print('se esta ocupado')
     time.sleep(3600)
     publicar()
     print('desperto')
@@ -61,3 +60,4 @@ while True:
 
 
   client.loop_forever()
+
