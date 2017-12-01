@@ -107,5 +107,10 @@ public class MeasurementLogic implements IMeasurementLogic {
         else
             return true;
     }
+
+    @Override
+    public List<MeasurementDTO> ubicacion(String pUbicacion) {
+        return CONVERTER.listEntitiesToListDTOs(persistence.findUbicacion(pUbicacion));
+    }
     
 }

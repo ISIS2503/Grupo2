@@ -111,17 +111,17 @@ public class Persistencer<T, PK> {
         }
     }
     
-        public T findUbicacion(String code) {
-        T entity;
+        public List<T> findUbicacion(String code) {
+        List<T> entities;
         String queryString = "Select c FROM " + entityClass.getSimpleName() + " c where c.ubicacion = :code1";
         Query query = entityManager.createQuery(queryString).setParameter("code1", code);
         try {
-            entity = (T) query.getSingleResult();
+            entities = query.getResultList();
         } catch (NoResultException | NonUniqueResultException e) {
-            entity = null;
+            entities = null;
             LOG.log(Level.WARNING, e.getMessage());
         }
-        return entity;
+        return entities;
     }
         
     public T findLast()

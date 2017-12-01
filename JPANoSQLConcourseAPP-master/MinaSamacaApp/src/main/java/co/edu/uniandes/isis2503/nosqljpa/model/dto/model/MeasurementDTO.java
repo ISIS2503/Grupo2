@@ -36,7 +36,7 @@ public class MeasurementDTO {
     private String variable;
     private double valor;    
     private String unidad;
-    private Date fecha;
+    private String fecha;
     private String ubicacion;
     
     public MeasurementDTO()
@@ -44,7 +44,7 @@ public class MeasurementDTO {
         
     }
 
-    public MeasurementDTO(String id, String variable, double valor, String unidad, Date fecha, String ubicacion) {
+    public MeasurementDTO(String id, String variable, double valor, String unidad, String fecha, String ubicacion) {
         this.id = id;
         this.variable = variable;
         this.valor = valor;
@@ -85,11 +85,11 @@ public class MeasurementDTO {
         this.unidad = unidad;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -101,10 +101,11 @@ public class MeasurementDTO {
         this.ubicacion = ubicacion;
     }
 
-    @Override
-    public String toString()
+    public void changeFecha()
     {
-        return "Measurement";
+        Long lo = Long.parseLong(fecha);
+        Date da = new Date(lo);
+        this.fecha = da.toString();
     }
    
 }

@@ -13,7 +13,7 @@ import hashlib
 
 # redis ===============================================================================================================================
 
-r = redis.Redis(host='157.253.229.201')
+#r = redis.Redis(host='157.253.216.111')
 
 # constantes =============================================================================================================================
 
@@ -56,7 +56,7 @@ def mqtt(topic, mensaje):
 
 
 
-def anteriores(lista, tipoVariable, medicion, inf, sup):
+def anteriores(lista, tipoVariable, medicion, inf, sup, ubicacion):
     if len(lista)<10:
         lista.insert(0, medicion)
         print(lista)
@@ -65,7 +65,7 @@ def anteriores(lista, tipoVariable, medicion, inf, sup):
         promedio = suma/10
         lista[:]=[]
         if not (inf<=medicion<=sup):
-            mensajeA = 'Sensor '+tipoVariable+' fuera de rango. promeido actual '+str(promedio)
+            mensajeA = 'Sensor '+tipoVariable+' fuera de rango. promeido actual '+str(promedio)+'-'+ubicacion+'-'+str(time.time()*1000).split('.')[0]
             mqtt('alertaRango.nivel1.area1', mensajeA)
 
 def publishToBack(pVariable, pValor, pUnidad, pFecha, pUbicacion, pToken):
@@ -80,8 +80,21 @@ def publishToBack(pVariable, pValor, pUnidad, pFecha, pUbicacion, pToken):
         "ubicacion": pUbicacion
     }
     print(payload)
-    response = requests.post(url, data=json.dumps(payload), headers={'Content-type': 'application/json', 'Authorization': pToken})
+    response = requests.post(url, data=json.dumps(payload), headers={'Content-type': 'application/json', "Authorization": "Bearer "+pToken})
     print("Response Status Code: " + str(response.status_code))
+
+
+
+def publishAlerta(pDescripcion, pFecha, pUbicacion):
+ 	url = 'http://localhost:8080/alerta'
+ 	payload = {
+ 		"descripcion": pDescripcion,
+ 		"fecha": pFecha,
+ 		"ubicacion": pUbicacion
+ 	}
+ 	print(payload)
+ 	response = requests.post(url, data=json.dumps(payload), headers={'Content-type': 'application/json'})
+ 	print("Response Status Code: ")
 
 
 def jmeter(lista, medicion):
@@ -122,7 +135,6 @@ if __name__ == "__main__":
     app.run(debug=True, port=8000, host='172.24.42.22')
 """
 
-
 # funciones =======================================================================================================================
 
 
@@ -146,7 +158,8 @@ def abc():
         'grant_type': grant_type
     }
     response = requests.post(base_url, data=json.dumps(payload), headers={'Content-type': 'application/json'})
-    return str(response.json())
+    a = response.json()['access_token']
+    return str(a)
     
 
 # Body =====================================================================================================================
@@ -164,7 +177,7 @@ ultimasR = list()
 ultimasI = list()
 
 
-
+token = abc()
 for mensaje in consumer:
 
     json_data = json.loads(mensaje.value.decode('utf-8'))
@@ -172,10 +185,10 @@ for mensaje in consumer:
     username = str(credenciales['usuario'])
     password = str(credenciales['password'])
     passwordtobytes = password.encode()
-    passR = r.get(username).decode("utf-8")
+    #passR = r.get(username).decode("utf-8")
     hexa = hashlib.md5(passwordtobytes).hexdigest()
-    print(passR, 'and', hexa)
-    if passR == hexa:
+    #print(passR, 'and', hexa)
+    if True:
         print(mensaje)
         print('==============================================================================')
         print()
@@ -190,20 +203,22 @@ for mensaje in consumer:
         iluminacion = str(mesures['Iluminacion'])
         unidadI = str(mesures['Unidad iluminacion'])
      
-        stamp = time.time()-300000
-        times = milis(sensetime)
-
+        stamp = (time.time()-300)*1000
+        times = milis(sensetime)*1000
+        ti = str(times).split('.')[0]
         if times>stamp:
-            mqtt('alertaLinea.nivel1.area1', 'Sensor fuera de linea en '+x)
+        	t = str(time.time()*1000).split('.')[0]
+        	mqtt('alertaLinea.nivel1.area1', 'Sensor fuera de linea en-'+x+'-'+t)
 
 
-        anteriores(ultimasT, unidadT, float(temperatura), temperaturaInf, temperaturaSup)
-        anteriores(ultimasR, unidadR, float(ruido), ruidoInf, ruidoSup)
-        anteriores(ultimasM, unidadM, float(monoxido), monoxidoInf, monoxidoSup)
-        anteriores(ultimasI, unidadI, float(iluminacion), iluminacionInf, iluminacionSup)
+
+        anteriores(ultimasT, unidadT, float(temperatura), temperaturaInf, temperaturaSup,x)
+        anteriores(ultimasR, unidadR, float(ruido), ruidoInf, ruidoSup,x)
+        anteriores(ultimasM, unidadM, float(monoxido), monoxidoInf, monoxidoSup,x)
+        anteriores(ultimasI, unidadI, float(iluminacion), iluminacionInf, iluminacionSup,x)
 
 
-        publishToBack("Temperatura", temperatura, unidadT, sensetime, x, abc())
-        publishToBack("Monoxido", monoxido, unidadM, sensetime, x, abc())
-        publishToBack("Ruido", ruido, unidadR, sensetime, x, abc())
-        publishToBack("Iluminacion", iluminacion, unidadI, sensetime, x, abc())
+        publishToBack("Temperatura", temperatura, unidadT, ti, x, token)
+        publishToBack("Monoxido", monoxido, unidadM, ti, x, token)
+        publishToBack("Ruido", ruido, unidadR, ti, x, token)
+        publishToBack("Iluminacion", iluminacion, unidadI, ti, x, token)

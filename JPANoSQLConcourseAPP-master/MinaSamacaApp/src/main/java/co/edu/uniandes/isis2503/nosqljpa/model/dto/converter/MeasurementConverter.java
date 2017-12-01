@@ -49,7 +49,6 @@ public class MeasurementConverter implements IMeasurementConverter {
         dto.setUnidad(entity.getUnidad());
         dto.setFecha(entity.getFecha());
         dto.setUbicacion(entity.getUbicacion());
-
         return dto;
     }
 

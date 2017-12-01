@@ -63,52 +63,11 @@ public class MeasurementService {
         this.limInf = 0;
     }
     
-    public void tipoVariable(String pVariable)
-    {
-        if (pVariable.equalsIgnoreCase("temperatura"))
-        {
-            this.limInf = 21.5;
-            this.limSup = 27.0;
-        }
-        else if (pVariable.equalsIgnoreCase("ruido"))
-        {
-            this.limInf = 80;
-            this.limSup = 85;
-        }
-        else if (pVariable.equalsIgnoreCase("monoxido"))
-        {
-            this.limInf = 0;
-            this.limSup = 350;
-        }
-        else if (pVariable.equalsIgnoreCase("iluminacion"))
-        {
-            this.limInf = 100;
-            this.limSup = 500;
-        }
-    }
     
     
     @POST
     public MeasurementDTO add(MeasurementDTO dto) {
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        /**
-        String ubicacion = dto.getUbicacion();
-        String variable = dto.getVariable();
-        LastMeasureDTO anterior = lastMeasureLogic.find(ubicacion);
-        long ant = anterior.getTime().getTime()+ 300000;
-        System.out.println("Fecha anterior: "+ant+" Fecha nueva: "+dto.getFecha().getTime());
-        if (ant < dto.getFecha().getTime())
-        {
-            System.out.println("Alerta");
-        }
-        LastMeasureDTO last = new LastMeasureDTO(dto.getUbicacion(), dto.getFecha());
-        lastMeasureLogic.update(last);
-        
-        tipoVariable(variable);
-        if (measurementLogic.fueraRango(ubicacion, variable, limInf, limSup))
-            System.out.println("Alerta en: "+ubicacion+ " sensor de "+variable+" fuera de rango");
-        
-        */
+        dto.changeFecha();
         return measurementLogic.add(dto);
         
     }
@@ -144,6 +103,14 @@ public class MeasurementService {
     public List<MeasurementDTO> getlastest(@PathParam("ubicacion") String pUbicacion, @PathParam("variable") String pVariable)
     {
         return measurementLogic.lastest(pUbicacion, pVariable);
+    }
+    
+    
+    @GET
+    @Path("/ubicacion/{pUbicacion}")
+    public List<MeasurementDTO> getUbicacion(@PathParam("pUbicacion") String ubicacion)
+    {
+        return measurementLogic.ubicacion(ubicacion);
     }
     
 }

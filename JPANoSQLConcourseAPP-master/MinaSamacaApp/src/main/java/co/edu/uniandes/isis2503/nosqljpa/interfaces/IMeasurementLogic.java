@@ -40,4 +40,5 @@ public interface IMeasurementLogic {
     public Boolean deleteAll();
     public List<MeasurementDTO> lastest(String pUbicacion, String pVariable);
     public Boolean fueraRango(String pUbicacion, String pVariable, double pLimInferior, double pLimSuperior);
+    public List<MeasurementDTO> ubicacion(String pUbicacion);
 }

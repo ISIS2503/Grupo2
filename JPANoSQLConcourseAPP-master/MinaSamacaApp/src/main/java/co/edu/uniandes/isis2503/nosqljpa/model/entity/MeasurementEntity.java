@@ -54,9 +54,7 @@ public class MeasurementEntity implements Serializable {
     
     private String unidad;
     
-    @OrderColumn
-    @Temporal(TemporalType.DATE)
-    private Date fecha;
+    private String fecha;
     
     private String ubicacion;
     
@@ -66,7 +64,7 @@ public class MeasurementEntity implements Serializable {
     }
     
 
-    public MeasurementEntity(String id, String variable, double valor, String unidad, Date fecha, String ubicacion) {
+    public MeasurementEntity(String id, String variable, double valor, String unidad, String fecha, String ubicacion) {
         this.id = id;
         this.variable = variable;
         this.valor = valor;
@@ -108,11 +106,11 @@ public class MeasurementEntity implements Serializable {
         this.unidad = unidad;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
