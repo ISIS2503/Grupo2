@@ -77,7 +77,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && (
+              isAuthenticated() && userHasRole(['admin']) && (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
