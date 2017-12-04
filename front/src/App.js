@@ -77,6 +77,17 @@ class App extends Component {
                 )
             }
             {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.goTo.bind(this, 'live')}
+                  >
+                    Live data
+                  </Button>
+                )
+            }
+            {
               isAuthenticated() && userHasRole(['admin']) && (
                   <Button
                     bsStyle="primary"

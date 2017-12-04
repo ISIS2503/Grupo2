@@ -9,6 +9,7 @@ import Floors from './Floors/Floors';
 import Rooms from './Rooms/Rooms';
 import history from './history';
 import Alerts from './Alerts/Alerts';
+import Live from './Live/Live'
 
 const auth = new Auth();
 
@@ -50,6 +51,13 @@ export const makeMainRoutes = () => {
               <Redirect to="/home"/>
             ) : (
               <Alerts auth={auth} {...props} />
+            )
+          )} />
+          <Route path="/live" render={(props) => (
+            !auth.isAuthenticated() ? (
+              <Redirect to="/home"/>
+            ) : (
+              <Live auth={auth} {...props} />
             )
           )} />
           <Route path="/callback" render={(props) => {
