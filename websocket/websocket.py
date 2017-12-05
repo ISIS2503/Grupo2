@@ -4,6 +4,7 @@ from threading import Lock
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 from kafka import KafkaConsumer
+import sys
  
 # Set this variable to "threading", "eventlet" or "gevent" to test the
 async_mode = None
@@ -13,15 +14,21 @@ app.config['SECRET_KEY'] = 'secret_thermalcomfort'
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
- 
+topic = list()
 # Ruta del dashboard
-@app.route('/')
-def index():
+@app.route('/<topi>', methods = ['GET'])
+def index(topi):
+    print(topi, 'no',file=sys.stderr)
+    topic.append(topi)
+    print(topic, 'prueba',file=sys.stderr)
     return render_template('index_ws.html', async_mode=socketio.async_mode)
  
 # Consumidor del topic de Kafka "alta.piso1.local1". Cada valor recibido se envía a través del websocket.
 def background_thread_websocket():
-    consumer = KafkaConsumer('nivel1.area1', group_id='temperature', bootstrap_servers=['localhost:8090'])
+    print(topic, 'se suscribio',file=sys.stderr)
+    x = topic.pop()
+    print('=========================================================================================',file=sys.stderr)
+    consumer = KafkaConsumer(x, group_id='temperature', bootstrap_servers=['localhost:8090'])
     for message in consumer:
         json_data = json.loads(message.value.decode('utf-8'))
         sensetime = json_data['sensetime']
@@ -38,7 +45,7 @@ def background_thread_websocket():
 # Rutina que se ejecuta cada vez que se conecta un cliente de websocket e inicia el conmunidor de Kafka
 @socketio.on('connect', namespace='/thermalcomfort')
 def test_connect():
-    print('paso')
+    print(topic, 'pruebaaaa',file=sys.stderr)
     global thread
     with thread_lock:
         if thread is None:
