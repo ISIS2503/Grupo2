@@ -55,18 +55,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && userHasRole(['admin']) && (
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.goTo.bind(this, 'floors')}
-                  >
-                    Floors
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
+              isAuthenticated() && userHasRole(['admin'])(
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
@@ -77,7 +66,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && (
+              isAuthenticated() && userHasRole(['admin']) (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
@@ -88,7 +77,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && userHasRole(['admin']) && (
+              isAuthenticated() && (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"

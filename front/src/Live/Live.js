@@ -26,10 +26,10 @@ class Live extends Component {
     return (
       <div>
       <div className="container">
-      <h1>Temperatura live data</h1>
+      <h1>LIVE DATA</h1>
       <Form inline onSubmit={(event) => this.handleSubmit(event)}>
         <FormGroup controlId="formInlineName">
-          <ControlLabel>Seleccion el tipo de variable</ControlLabel>
+          <ControlLabel>Seleccione el tipo de variable </ControlLabel>
           <FormControl
             ref={select => { this.select = select }} componentClass="select" disabled={this.state.added}>
             <option value="8085">Temperatura</option>

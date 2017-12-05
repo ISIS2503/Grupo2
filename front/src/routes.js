@@ -5,7 +5,6 @@ import Home from './Home/Home';
 import Profile from './Profile/Profile';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
-import Floors from './Floors/Floors';
 import Rooms from './Rooms/Rooms';
 import history from './history';
 import Alerts from './Alerts/Alerts';
@@ -30,13 +29,6 @@ export const makeMainRoutes = () => {
               <Redirect to="/home"/>
             ) : (
               <Profile auth={auth} {...props} />
-            )
-          )} />
-          <Route path="/floors" render={(props) => (
-            !auth.isAuthenticated() || !auth.userHasRole(['admin']) ? (
-              <Redirect to="/home"/>
-            ) : (
-              <Floors auth={auth} {...props} />
             )
           )} />
           <Route path="/rooms" render={(props) => (
