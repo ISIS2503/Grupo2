@@ -12,16 +12,19 @@ import java.util.List;
 /**
  *
  * @author grupo 2
+ * Funciona como wrapper para convertir de DTO a Entity
+ *
  */
+
 public interface IAlertaConverter {
-    
-    
+
+
     public AlertaDTO entityToDto(AlertaEntity entity);
-    
+
     public AlertaEntity dtoToEntity(AlertaDTO dto);
-    
+
     public List<AlertaDTO> listEntitesToListDto(List<AlertaEntity> entities);
-    
+
     public List<AlertaEntity> listDtosToListEntities(List<AlertaDTO> dto);
-    
+
 }

@@ -12,16 +12,18 @@ import java.util.List;
 /**
  *
  * @author Grupo 2
+ *
+ * Funciona como wrapper para convertir de DTO a Entity
  */
 public interface ILastMeasureConverter {
-    
+
     public LastMeasureDTO entityToDto(LastMeasureEntity entity);
-    
+
     public LastMeasureEntity dtoToEntity(LastMeasureDTO dto);
-    
+
     public List<LastMeasureDTO> listEntitiesToListDTOs(List<LastMeasureEntity> entities);
-    
-    public List<LastMeasureEntity> listDTOsToListEntities(List<LastMeasureDTO> dtos); 
-    
-    
+
+    public List<LastMeasureEntity> listDTOsToListEntities(List<LastMeasureDTO> dtos);
+
+
 }
