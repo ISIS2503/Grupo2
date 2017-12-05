@@ -29,6 +29,8 @@ import java.util.List;
 /**
  *
  * @author grupo2
+ *
+ * La interface actua como una facade
  */
 public interface IMeasurementLogic {
     public MeasurementDTO add(MeasurementDTO dto);
