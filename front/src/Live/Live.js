@@ -22,11 +22,12 @@ class Live extends Component {
 
   render() {
     return (
+      <div>
       <div className="container">
       <h1>Temperatura live data</h1>
       <Form inline onSubmit={(event) => this.handleSubmit(event)}>
         <FormGroup controlId="formInlineName">
-          <ControlLabel>zona code</ControlLabel>
+          <ControlLabel> code</ControlLabel>
           {' '}
           <FormControl type="text" placeholder="nive1.nivel1" onChange={(event) => this.handleChange(event)} />
         </FormGroup>
@@ -35,6 +36,7 @@ class Live extends Component {
           Get data
         </Button>
       </Form>
+      </div>
       <div id='prueba'/>
       </div>
     );
