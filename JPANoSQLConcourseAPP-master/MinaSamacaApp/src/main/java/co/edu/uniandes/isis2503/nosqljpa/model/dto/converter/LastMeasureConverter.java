@@ -14,17 +14,19 @@ import java.util.List;
 /**
  *
  * @author js.prieto10
+ *
+ *  Funciona como wrapper para convertir de DTO a Entity
  */
 public class LastMeasureConverter implements ILastMeasureConverter {
 
     public static ILastMeasureConverter CONVERTER = new LastMeasureConverter();
-    
+
     @Override
     public LastMeasureDTO entityToDto(LastMeasureEntity entity) {
         LastMeasureDTO dto = new LastMeasureDTO();
         dto.setId(entity.getId());
         dto.setTime(entity.getTime());
-        
+
         return dto;
     }
 
@@ -33,7 +35,7 @@ public class LastMeasureConverter implements ILastMeasureConverter {
         LastMeasureEntity entity = new LastMeasureEntity();
         entity.setId(dto.getId());
         entity.setTime(dto.getTime());
-        
+
         return entity;
     }
 
@@ -43,7 +45,7 @@ public class LastMeasureConverter implements ILastMeasureConverter {
         for (LastMeasureEntity entity : entities) {
             dtos.add(entityToDto(entity));
         }
-        return dtos;  
+        return dtos;
     }
 
     @Override

@@ -15,15 +15,17 @@ import java.util.List;
 /**
  *
  * @author js.prieto10
+ *
+ * Funciona como wrapper para convertir de DTO a Entity
  */
 public class AlertaConverter implements IAlertaConverter{
 
      public static IAlertaConverter CONVERTER = new AlertaConverter();
-    
-    
+
+
     public AlertaConverter() {
     }
-    
+
 
     @Override
     public AlertaDTO entityToDto(AlertaEntity entity) {
@@ -62,5 +64,5 @@ public class AlertaConverter implements IAlertaConverter{
         }
         return entities;
     }
-    
+
 }

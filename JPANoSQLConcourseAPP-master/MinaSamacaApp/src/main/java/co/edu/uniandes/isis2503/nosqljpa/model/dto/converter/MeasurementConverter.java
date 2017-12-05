@@ -31,7 +31,9 @@ import java.util.List;
 
 /**
  *
- * @author ca.mendoza968
+ * @author grupo 2
+ *
+ *  Funciona como wrapper para convertir de DTO a Entity
  */
 public class MeasurementConverter implements IMeasurementConverter {
 
