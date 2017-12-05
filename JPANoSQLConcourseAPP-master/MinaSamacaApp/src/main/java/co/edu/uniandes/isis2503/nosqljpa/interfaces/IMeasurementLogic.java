@@ -28,7 +28,7 @@ import java.util.List;
 
 /**
  *
- * @author ca.mendoza968
+ * @author grupo2
  */
 public interface IMeasurementLogic {
     public MeasurementDTO add(MeasurementDTO dto);

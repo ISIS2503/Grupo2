@@ -27,9 +27,11 @@ import co.edu.uniandes.isis2503.nosqljpa.model.dto.model.MeasurementDTO;
 import co.edu.uniandes.isis2503.nosqljpa.model.entity.MeasurementEntity;
 import java.util.List;
 
+//Wrapper que convierte los objetos de DTOs a Entity.
+
 /**
  *
- * @author ca.mendoza968
+ * @author grupo2
  */
 public interface IMeasurementConverter {
     public MeasurementDTO entityToDto(MeasurementEntity entity);

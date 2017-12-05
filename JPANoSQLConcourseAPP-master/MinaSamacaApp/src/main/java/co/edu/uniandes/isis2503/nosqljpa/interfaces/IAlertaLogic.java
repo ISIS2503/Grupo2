@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author js.prieto10
+ * @author grupo2
  */
 public interface IAlertaLogic {
     

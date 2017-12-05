@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author js.prieto10
+ * @author grupo 2
  */
 public interface IAlertaConverter {
     

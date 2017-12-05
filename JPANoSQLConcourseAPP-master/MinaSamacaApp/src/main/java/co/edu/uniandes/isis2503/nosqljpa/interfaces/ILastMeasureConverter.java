@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author js.prieto10
+ * @author Grupo 2
  */
 public interface ILastMeasureConverter {
     
