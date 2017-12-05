@@ -16,7 +16,7 @@ thread = None
 thread_lock = Lock()
 topic = list()
 # Ruta del dashboard
-@app.route('/<topi>', methods = ['GET'])
+@app.route('/data/<topi>')
 def index(topi):
     print(topi, 'no',file=sys.stderr)
     topic.append(topi)
@@ -28,22 +28,22 @@ def background_thread_websocket():
     print(topic, 'se suscribio',file=sys.stderr)
     x = topic.pop()
     print('=========================================================================================',file=sys.stderr)
-    consumer = KafkaConsumer(x, group_id='temperature', bootstrap_servers=['localhost:8090'])
+    consumer = KafkaConsumer(x, group_id='Ruido', bootstrap_servers=['localhost:8090'])
     for message in consumer:
         json_data = json.loads(message.value.decode('utf-8'))
         sensetime = json_data['sensetime']
         mesures = json_data['Mesures']
-        sense = mesures['Temperatura']
+        sense = mesures['Ruido']
  
         payload = {
             'time': sensetime,
             'value': sense
         }
         socketio.emit('mesurements', str(payload),
-                      namespace='/thermalcomfort')
+                      namespace='/Ruido')
  
 # Rutina que se ejecuta cada vez que se conecta un cliente de websocket e inicia el conmunidor de Kafka
-@socketio.on('connect', namespace='/thermalcomfort')
+@socketio.on('connect', namespace='/Ruido')
 def test_connect():
     print(topic, 'pruebaaaa',file=sys.stderr)
     global thread
@@ -54,4 +54,4 @@ def test_connect():
  
 # Iniciar el servicio en el puerto 8086
 if __name__ == '__main__':
-    socketio.run(app, port=8087, debug=True)
+    socketio.run(app, port=8088, debug=True)
