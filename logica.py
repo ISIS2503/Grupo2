@@ -198,7 +198,7 @@ for mensaje in consumer:
         unidadT = str(mesures['Unidad temperatura'])
         monoxido = str(mesures['Monoxido de carbono'])
         unidadM = str(mesures['Unidad monoxido'])
-        ruido = str(mesures[' Ruido'])
+        ruido = str(mesures['Ruido'])
         unidadR = str(mesures['Unidad ruido'])
         iluminacion = str(mesures['Iluminacion'])
         unidadI = str(mesures['Unidad iluminacion'])

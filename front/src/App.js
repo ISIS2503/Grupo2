@@ -55,7 +55,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && userHasRole(['admin'])(
+              isAuthenticated() && userHasRole(['admin']) && (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
@@ -66,7 +66,7 @@ class App extends Component {
                 )
             }
             {
-              isAuthenticated() && userHasRole(['admin']) (
+              isAuthenticated() && userHasRole(['admin']) && (
                   <Button
                     bsStyle="primary"
                     className="btn-margin"
